@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a238750-76aa-4f55-9fc3-912c9434f7fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Application/AppInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/CooperativeApp.java" afterDir="false" />
+    <list default="true" id="7a238750-76aa-4f55-9fc3-912c9434f7fa" name="Changes" comment="[feat]: create app class and interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +36,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "preferences.editor"
   }
@@ -52,6 +50,14 @@
       <option name="presentableId" value="Default" />
       <updated>1690010926497</updated>
     </task>
+    <task id="LOCAL-00001" summary="[feat]: create app class and interface">
+      <created>1690146881596</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690146881596</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,5 +97,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[feat]: create app class and interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat]: create app class and interface" />
   </component>
 </project>
