@@ -36,7 +36,7 @@ public class Main {
                         account.checkBalance();
                 }
                 case 2 -> {
-                    System.out.print("Enter amount to deposit(Max 100,000): ");
+                    System.out.print("Enter amount to deposit(Min 50,000): ");
                     double depositAmount = scanner.nextDouble();
                     account.depositFunds(depositAmount);
                 }
@@ -47,9 +47,24 @@ public class Main {
                 }
                 case 4 -> account.displayAccountOverview();
                 case 5 -> {
-                    System.out.print("Enter membership length(Years): ");
-                    int enteredYears = scanner.nextInt();
-                    account.setMembershipLength(enteredYears);
+                    int membershipChoice;
+                    do {
+                        System.out.println("1. 3 months");
+                        System.out.println("2. 6 months");
+                        System.out.println("3. 12 months");
+                        System.out.println("0. exit");
+                        System.out.print("Enter membership length(Years): ");
+
+                        membershipChoice = scanner.nextInt();
+
+                        switch (membershipChoice) {
+                            case 1 -> membershipChoice = 3;
+                            case 2 -> membershipChoice = 6;
+                            case 3 -> membershipChoice = 12;
+                            default -> System.out.println("Invalid choice");
+                        }
+                        account.setMembershipLength(membershipChoice);
+                    } while (membershipChoice <= 0);
                 }
                 case 0 -> System.out.println("Exiting the application. Goodbye!");
                 default -> System.out.println("Invalid choice. Please try again.");

@@ -4,13 +4,13 @@ package Application;
 import java.util.Objects;
 
 public class CooperativeApp implements AppInterface {
-    int MAX_AMOUNT_INFLOW = 100_000;
-    double TRANSACTION_CHARGE = 4.50;
+    int MIN_AMOUNT_INFLOW = 50_000;
     private final String accountName;
     private final String pin;
     private double accountBalance;
+    private boolean collected = false;
     private int membershipLength;
-    private double withdrawalLimit = 0.1;
+    private boolean membershipLengthSet = false;
 
     public CooperativeApp(String accountName, String pin) {
         this.accountName = accountName;
@@ -28,11 +28,11 @@ public class CooperativeApp implements AppInterface {
 
     @Override
     public void depositFunds(double amount) {
-        if (amount <= MAX_AMOUNT_INFLOW) {
+        if (amount >= MIN_AMOUNT_INFLOW) {
             accountBalance += amount;
             System.out.println("Deposit successful. Your new balance is " + accountBalance);
         } else
-            System.out.println("Deposit failed. Cash inflow amount exceeds limit.");
+            System.out.println("Deposit failed: must be above minimum amount inflow.");
     }
 
 
@@ -46,18 +46,26 @@ public class CooperativeApp implements AppInterface {
     }
     @Override
     public void withdrawFunds(double amount) {
-        double allowedWithdrawal = withdrawalLimit * accountBalance;
+        double allowedWithdrawal = 0.0;
+        if(membershipLengthSet && accountBalance > 0 && !collected)
+            allowedWithdrawal = membershipLength * accountBalance;
+
         if(amount <= allowedWithdrawal) {
-            accountBalance -= (amount + TRANSACTION_CHARGE);
-            System.out.println("Withdrawal successful. Your new balance is " + accountBalance);
+            accountBalance -= (amount);
+            collected = true;
+            System.out.println("Withdrawal successful. You can't withdraw till your cycle is over");
         } else
-            System.out.println("Withdrawal amount exceeds allowed limit.");
+            System.out.println("Withdrawal amount exceeds allowed limit: Membership has not been set, a deposit has not been made or your cycle isn't over  .");
     }
 
     @Override
-    public void setMembershipLength(int years) {
-        this.membershipLength = years;
-        withdrawalLimit = withdrawalLimit + (withdrawalLimit * membershipLength);
+    public void setMembershipLength(int months) {
+        if(!membershipLengthSet) {
+            this.membershipLength = months;
+            membershipLengthSet = true;
+            System.out.println("Membership set to " + this.membershipLength + " months");
+        }
+        System.out.println("Membership has already been set.");
     }
 
     @Override
@@ -66,6 +74,6 @@ public class CooperativeApp implements AppInterface {
         System.out.println("Account Holder: " + accountName);
         System.out.println("Membership Length: " + membershipLength + " Years");
         System.out.println("Current Balance: " + accountBalance);
-        System.out.println("------------------------\n");
+        System.out.println("------------  ----------\n");
     }
 }
