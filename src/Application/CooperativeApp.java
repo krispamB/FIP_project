@@ -11,6 +11,7 @@ public class CooperativeApp implements AppInterface {
     private boolean collected = false;
     private int membershipLength;
     private boolean membershipLengthSet = false;
+    double allowedWithdrawal = 0.0;
 
     public CooperativeApp(String accountName, String pin) {
         this.accountName = accountName;
@@ -46,13 +47,14 @@ public class CooperativeApp implements AppInterface {
     }
     @Override
     public void withdrawFunds(double amount) {
-        double allowedWithdrawal = 0.0;
         if(membershipLengthSet && accountBalance > 0 && !collected)
             allowedWithdrawal = membershipLength * accountBalance;
+        System.out.println(this.allowedWithdrawal);
 
         if(amount <= allowedWithdrawal) {
             accountBalance -= (amount);
             collected = true;
+            allowedWithdrawal -= amount;
             System.out.println("Withdrawal successful. You can't withdraw till your cycle is over");
         } else
             System.out.println("Withdrawal amount exceeds allowed limit: Membership has not been set, a deposit has not been made or your cycle isn't over  .");
@@ -64,8 +66,8 @@ public class CooperativeApp implements AppInterface {
             this.membershipLength = months;
             membershipLengthSet = true;
             System.out.println("Membership set to " + this.membershipLength + " months");
-        }
-        System.out.println("Membership has already been set.");
+        } else
+            System.out.println("Membership has already been set.");
     }
 
     @Override
@@ -74,6 +76,7 @@ public class CooperativeApp implements AppInterface {
         System.out.println("Account Holder: " + accountName);
         System.out.println("Membership Length: " + membershipLength + " Years");
         System.out.println("Current Balance: " + accountBalance);
+        System.out.println("Amount left to withdraw: " + allowedWithdrawal);
         System.out.println("------------  ----------\n");
     }
 }

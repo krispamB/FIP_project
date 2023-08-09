@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a238750-76aa-4f55-9fc3-912c9434f7fa" name="Changes" comment="[feat]: add scanner for user interface and experience">
+    <list default="true" id="7a238750-76aa-4f55-9fc3-912c9434f7fa" name="Changes" comment="[feat]: enhanced the features of the application and added to the readme.md file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/AppInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/AppInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/CooperativeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/CooperativeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691511985579</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[feat]: enhanced the features of the application and added to the readme.md file">
+      <created>1691583613254</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691583613254</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +124,7 @@
     <MESSAGE value="[feat]: create app class and interface" />
     <MESSAGE value="[feat]: add business logic to methods" />
     <MESSAGE value="[feat]: add scanner for user interface and experience" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat]: add scanner for user interface and experience" />
+    <MESSAGE value="[feat]: enhanced the features of the application and added to the readme.md file" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat]: enhanced the features of the application and added to the readme.md file" />
   </component>
 </project>
