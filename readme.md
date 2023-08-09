@@ -53,4 +53,4 @@ Furthermore, there should be a validation to allow only a particular amount of c
 
 ## Conclusion
 
-The Cooperative Application demonstrates fundamental cooperative banking operations using Java and an SQLite database. Refer to this README for setting up the application, using its features, and potential improvements. This project serves as a foundation for building more advanced banking systems with extended functionalities and enhanced security measures.
+The Cooperative Application demonstrates fundamental cooperative banking operations using Java. Refer to this README for setting up the application, using its features, and potential improvements. This project serves as a foundation for building more advanced banking systems with extended functionalities and enhanced security measures.
